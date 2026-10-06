@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Save Page as Internet Shortcut</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hotkey-container {
+            margin-top: 16px;
+            text-align: left;
+        }
+
+        .hotkey-input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 0.85rem;
+            text-align: center;
+            background-color: var(--bg-secondary);
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .hotkey-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="title">🌐 Shortcut Maker</div>
+        <button id="saveBtn" class="btn btn-primary">Save as .url</button>
+
+        <div class="hotkey-container">
+            <div class="text-muted" style="margin-top:0;">Custom Hotkey:</div>
+            <input type="text" id="hotkeyInput" class="hotkey-input" readonly placeholder="Press keys...">
+            <div class="text-muted" style="font-size: 0.7rem; text-align: center; margin-top: 4px;">Click to set, then
+                press keys</div>
+        </div>
+
+        <div id="errorBox" class="alert-error hidden">
+            <span id="errorMessage"></span>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Save Page as Internet Shortcut",
+    "version": "1.0",
+    "description": "Saves active tab as a .url file via hotkey, context menu, or toolbar popup.",
+    "icons": {
+        "16": "world-wide-web.png",
+        "32": "world-wide-web.png",
+        "48": "world-wide-web.png",
+        "128": "world-wide-web.png"
+    },
+    "permissions": [
+        "activeTab",
+        "downloads",
+        "contextMenus",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "world-wide-web.png",
+            "32": "world-wide-web.png",
+            "48": "world-wide-web.png",
+            "128": "world-wide-web.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
